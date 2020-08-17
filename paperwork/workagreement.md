@@ -2,7 +2,7 @@
 
 * **Working Hours** <br>
 Brandon: not available before 9:00 AM; could work most evenings after class until 12:00 AM; weekends if agreed upon beforehand <br>
-Ronak:
+Ronak:  i am available anytime on a day and weekend also after 12:00 AM to 6:00 AM i am not available <br>
 
 * **Github Workflow** <br>
 Are you working on branches? // Both on personal branches off of master.
@@ -23,4 +23,4 @@ If anything comes up, we'll first talk about it respectfully (hopefully resolved
 Our goals are to have fun implementing what we've learned and to learn even more as we create our project! <br>
 
 **Signed**: Brandon Backer <br>
-**Signed**: 
+**Signed**: Ronak Soni
