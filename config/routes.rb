@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :team_members
   resources :admins
 
-  get '/projecter', to: 'auth#index'
+  get '/colab', to: 'auth#index'
   root to: "auth#index"
 
 end

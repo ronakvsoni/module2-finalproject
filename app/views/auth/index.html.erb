@@ -1,45 +1,59 @@
-<section class="hero is-link">
-	<div class="hero-body">
-		<div class="container has-text-centered">
-			<h1 class="title">
-				Welcome to Colab 
-			</h1>
-			<h2 class="subtitle">
-				A small project management app 
-			</h2>
-		</div>
-	</div>
-</section>
-<section class="section">
-	<div class="container">
-		<div class="columns">
-			<div class="column is-7">
-				<div class="content">
-					<h3 class="title is-3">Why is Colab so awesome?</h3>
-					<p>This app takes the stuffiness out of project management and delivers efficient and agile methods anyone can use to lead projects to success.  It’s all designed to help you manage both people and projects more easily.</p>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Landing</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	
+	<body>
+		<section class="hero is-link">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+					<h1 class="title">
+						Welcome to Colab 
+					</h1>
+					<h2 class="subtitle">
+						A small project management app 
+					</h2>
 				</div>
 			</div>
-<% if flash.now[:alert] %>
-    <div class="alert alert-danger" role="alert">
-        Incorrect username or password.
-    </div>
-<% end %>
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <p class="card-text">
-            <%= form_for :auth do |f| %>
-                <%= "Username" %><br>
-                <%= f.text_field :username, :class => 'input' %><br><br>
-                <%= "Password" %><br>
-                <%= f.password_field :password, :class => 'input' %><br><br>
-                <%= f.submit 'Sign In', :class => 'btn btn-success btn-block' %>
-            <% end %>
-            <a><button class="btn btn-outline-success my-2 my-sm-0" href="../admin/new" type="submit">Create New Account
-            </button></a>
-      </p>
-  </div>
-</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-7">
+						<div class="content">
+							<h3 class="title is-3">Why is Colab so awesome?</h3>
+							<p>This app takes the stuffiness out of project management and delivers efficient and agile methods anyone can use to lead projects to success.  It’s all designed to help you manage both people and projects more easily.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<p class="card-text">
+					<%= form_for :auth do |f| %>
+						<% if flash.now[:alert] %>
+							<div class="alert alert-danger" role="alert">
+								Incorrect username or password.
+							</div>
+						<% end %>
+						<%= "Username" %><br>
+						<%= f.text_field :username, :class => 'input' %><br><br>
+						<%= "Password" %><br>
+						<%= f.password_field :password, :class => 'input' %><br><br>
+						<%= f.submit 'Sign In', :class => 'btn btn-primary btn-block' %>
+					<% end %><br>
+					<div class="h-divider">
+					</div>
+					<a><button class="btn btn-success my-2 my-sm-0" href="http://localhost:3000/admins/new" type="button">Create New Account</button></a>
+					<%#= button_to "Create New Account", new_admin_path(@admin), method: :get %>
+				</p>
 			</div>
 		</div>
-	</div>
-</section>
+
+	</body>
+</html>
