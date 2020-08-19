@@ -33,9 +33,11 @@
                 <%= "Password" %><br>
                 <%= f.password_field :password, :class => 'input' %><br><br>
                 <%= f.submit 'Sign In', :class => 'btn btn-success btn-block' %>
-            <% end %>
-            <a><button class="btn btn-outline-success my-2 my-sm-0" href="../admin/new" type="submit">Create New Account
-            </button></a>
+				
+            
+
+			<% end %>
+			<%= button_to "Create New Account", new_admin_path(@admin), method: :get %>
       </p>
   </div>
 </div>
