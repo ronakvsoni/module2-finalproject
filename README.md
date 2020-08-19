@@ -2,7 +2,7 @@
 
 <strong>Introduction</strong>
 
-PROJECTer is an app designed for admins, project managers, and employers (and, later, employees/team members when time allows!) who want to utilize an efficient, agile online visual aid to manage project tasks and keep track of team progress on work items.  
+Colab is an app designed for admins, project managers, and employers (and, later, employees/team members when time allows!) who want to utilize an efficient, agile online visual aid to manage project tasks and keep track of team progress on work items.  
 
 Built With: <br>
     - Ruby 2.7.0 <br>
@@ -14,7 +14,7 @@ Built With: <br>
 
 Run `bundle install` to ensure all components are installed and up to date. <br>
 Run this project as a Rails server in your local browser using `rails s`. <br>
-The initial page can be found at http://localhost:3000/projecter. <br>
+The initial page can be found at http://localhost:3000/colab. <br>
 Clone Repo from: https://github.com/ronakvsoni/module2-finalproject.
 <br>
 <br>

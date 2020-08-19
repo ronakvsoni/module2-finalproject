@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :teams
   resources :team_members
   resources :admins
- 
-  
+
+  get '/colab', to: 'auth#index'
   root to: "auth#index"
   # get '/login', to: "admin#new", as: "login"
   # get 'new_admin_path', to: 'admins#new', as: 'signup'

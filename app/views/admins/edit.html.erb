@@ -4,9 +4,6 @@
 <%= form_for @admin do |f| %>
     Name: <%=f.text_field :name %><br><br>
     Email: <%=f.email_field :email %><br><br>
-    
     Position: <%=f.text_field :position @admin.position %><br><br>
-
-    
     <%=f.submit 'Update'%>
 <% end %>
