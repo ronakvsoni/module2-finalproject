@@ -263,6 +263,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   bulma-rails (~> 0.6.1)
   byebug

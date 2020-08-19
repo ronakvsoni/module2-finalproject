@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_08_15_220145) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
+    t.string "username"
+    t.string "password_digest"
     t.string "email"
     t.string "position"
     t.datetime "created_at", precision: 6, null: false

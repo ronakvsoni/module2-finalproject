@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/colab', to: 'auth#index'
   root to: "auth#index"
-
+  # get '/login', to: "admin#new", as: "login"
+  # get 'new_admin_path', to: 'admins#new', as: 'signup'
 end
 
-# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
