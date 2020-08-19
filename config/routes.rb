@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :team_members
   resources :admins
 
-  get '/login', to: 'auth#index'
-  root to: "home#index"
+  get '/projecter', to: 'auth#index'
+  root to: "auth#index"
 
 end
 

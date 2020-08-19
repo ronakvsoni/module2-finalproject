@@ -1,0 +1,8 @@
+<h2><%= "Create a Profile" %></h2><br>
+
+<%= form_for @admin do |f| %>
+    Name: <%=f.text_field :name %><br><br>
+    Email: <%=f.email_field  :email %><br><br>
+    Position: <%=f.text_field :position %><br><br>
+    <%=f.submit %>
+<% end %>
