@@ -1,2 +1,14 @@
-<br>
-<br>
+<h1><%= @admin.username %></h1>
+
+<p><%= "Name: #{@admin.name}" %></p>
+
+<%= link_to "All admins", admins_path %>
+<%#= link_to "All admins", admins_path %>
+
+<%= button_to "Edit Your Account", edit_admin_path(@admin), method: :get %>
+
+<%= button_to "Delete Your Account", admin_path(@admin), method: :delete %>
+
+<button type="button" class="btn btn-outline-primary">Create Team</button>
+<button type="button" class="btn btn-outline-primary">Create Project</button>
+<button type="button" class="btn btn-outline-primary">Create Task</button>

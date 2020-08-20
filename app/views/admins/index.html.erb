@@ -1,0 +1,7 @@
+<h1>All Admins</h1>
+
+<ul>
+  <% @admin.each do |admi| %>
+    <li><%= link_to admi.name, admi %></li>
+  <% end %>
+</ul>

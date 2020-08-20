@@ -7,26 +7,35 @@ class AdminsController < ApplicationController
     def create
         @admin = Admin.new(admin_params)
         if @admin.save
-            session[:user_id] = @admin.id
+            session[:admin_id] = @admin.id
             redirect_to @admin
         else
             flash[:message] = @admin.errors.full_messages
-            render :new
+            render 'new'
         end
     end
 
     def edit
-        @Admin = Admin.find(params[:id])
+        @admin = Admin.find(params[:id])
     end
 
     def show
-    
+        @admin = Admin.find(params[:id])
+    end
+
+
+    def index
+        @admin = Admin.all
+    end
+
+    def destroy 
+        redirect_to admin_path
     end
 
 private
 
     def admin_params
-        params.require(:admin).permit(:name, :email, :position)
+        params.require(:admin).permit(:name,:username, :email, :position, :password, :password_confirmation)
     end
 
 end

@@ -15,11 +15,12 @@
 						Welcome to Colab 
 					</h1>
 					<h2 class="subtitle">
-						A small project management app 
+						A project management app 
 					</h2>
 				</div>
 			</div>
-		</section>
+		<%# </section> %>
+		<%# </section>
 		<section class="section">
 			<div class="container">
 				<div class="columns">
@@ -31,8 +32,8 @@
 					</div>
 				</div>
 			</div>
-		</section>
-		<div class="card" style="width: 18rem;">
+		</section> %>
+		<div class="card mx-auto" style="width: 18rem;">
 			<div class="card-body">
 				<p class="card-text">
 					<%= form_for :auth do |f| %>
@@ -45,15 +46,17 @@
 						<%= f.text_field :username, :class => 'input' %><br><br>
 						<%= "Password" %><br>
 						<%= f.password_field :password, :class => 'input' %><br><br>
-						<%= f.submit 'Sign In', :class => 'btn btn-primary btn-block' %>
+						<%= f.submit 'Sign In', :method => :get, :class => 'btn btn-primary btn-block' %>
 					<% end %><br>
 					<div class="h-divider">
+					</div><br>
+					<div class="text-center">
+						<%# <button class="btn btn-success" href="http://localhost:3000/admins/new" role ="button">Create New Account</button> %>
+						<%= button_to "Create New Account", new_admin_path, :class => "btn btn-success", :method => :get %>
 					</div>
-					<a><button class="btn btn-success my-2 my-sm-0" href="http://localhost:3000/admins/new" type="button">Create New Account</button></a>
-					<%#= button_to "Create New Account", new_admin_path(@admin), method: :get %>
 				</p>
 			</div>
-		</div>
-
+		</div><br><br><br>
+		</section>
 	</body>
 </html>
