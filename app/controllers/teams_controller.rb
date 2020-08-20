@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
     before_action :find_team, only: [:show, :edit, :update, :destroy]
 
     def new
-        @team=Team.new  
+        @team = Team.new  
     end
 
     def create
@@ -23,21 +23,20 @@ class TeamsController < ApplicationController
     def show   
     end
 
-
     def index
-        @team = Team.all
+        @teams = Team.all
     end
 
     def destroy 
         @team.delete
         flash[:message] = "Successfully Deleted Team"
-        redirect_to show_team_path
+        redirect_to @admin
     end
 
 private
 
     def team_params
-        params.require(:team).permit(:admin_ids, :team_member_ids)
+        params.require(:team).permit(:name, :admin_id, :team_member_ids)
     end
 
     def find_team
