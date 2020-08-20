@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+TeamMember.destroy_all
+
+
+
+
+10.times do
+    TeamMember.create(
+      name: Faker::FunnyName.name_with_initial,
+      email: Faker::Internet.email,
+      position: Faker::Job.position
+     
+    )
+end
+puts "seed seeded!!!"
