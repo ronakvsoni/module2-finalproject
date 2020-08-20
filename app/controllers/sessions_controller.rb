@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
 		if @admin && @admin.authenticate(params[:password])
 			# success
-			session[:admin_id] = admin.id
+			session[:admin_id] == @admin.id
 			redirect_to @admin
 		else
 			# error

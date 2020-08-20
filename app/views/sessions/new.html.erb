@@ -22,18 +22,21 @@
 			<div class="card mx-auto" style="width: 18rem;">
 				<div class="card-body">
 					<p class="card-text">
-						<%= form_for :sessions do |f| %>
-							<% if flash.now[:alert] %>
-								<div class="alert alert-danger" role="alert">
-									Incorrect username or password.
-								</div>
-							<% end %>
-							<%= "Username" %><br>
-							<%= f.text_field :username, :class => 'input' %><br><br>
-							<%= "Password" %><br>
-							<%= f.password_field :password, :class => 'input' %><br><br>
-							<%= f.submit 'Sign In', :class => 'btn btn-primary btn-block' %>
-						<% end %><br>
+                    <% if flash[:message] %>
+	<p><%= flash[:message] %></p>
+<% end %>
+
+<%= form_with url: '/login' do %>
+	<%= label_tag :username %>
+	<%= text_field_tag :username %>
+
+	<%= label_tag :password %>
+	<%= password_field_tag :password %>
+
+	<%= submit_tag "Sign in", :class => "btn btn-success" %>
+<% end %>
+
+
 						<div class="h-divider">
 						</div><br>
 						<div class="text-center">
