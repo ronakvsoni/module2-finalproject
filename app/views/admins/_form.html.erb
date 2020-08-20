@@ -1,0 +1,34 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <strong style='color: red;'><%= e %></strong>
+    <br/><br/>
+  <% end %>
+<% end %>
+
+<div class="card mx-auto" style="width: 20rem;">
+  <div class="card-body mx-auto">
+    <p class="card-text">
+      <%= form_with model: @admin, url: '/admins', method: 'POST' do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %><br><br>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %><br><br>
+
+        <%= f.label :password_confirmation, 'Re-Type Password' %>
+        <%= f.password_field :password_confirmation %><br><br>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %><br><br>
+        
+        <%= f.label :email %>
+        <%= f.email_field :email %><br><br>
+
+        <%= f.label :position %>
+        <%= f.text_field :position %>
+        <br><br>
+        <%= f.submit 'Create Account', :class => 'btn btn-primary' %>
+      <% end %>
+    </p>
+  </div>
+</div>
