@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+    
     before_action :find_team, only: [:show, :edit, :update, :destroy]
 
     def new
