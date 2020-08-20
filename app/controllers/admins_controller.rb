@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+    before_action :find_admin, only: [:show, :edit, :update, :destroy]
 
     def new
         @admin=Admin.new  
@@ -16,26 +17,38 @@ class AdminsController < ApplicationController
     end
 
     def edit
-        @admin = Admin.find(params[:id])
     end
+
+    def update
+		if @admin.update(admin_params)
+			redirect_to @admin
+		else
+			render :edit
+		end
+	end
+
 
     def show
-        @admin = Admin.find(params[:id])
     end
-
 
     def index
         @admin = Admin.all
     end
 
     def destroy 
-        redirect_to admin_path
+        @admin.delete
+        flash[:message] = "Successfully Deleted Your Account."
+        redirect_to home_path
     end
 
 private
 
     def admin_params
         params.require(:admin).permit(:name,:username, :email, :position, :password, :password_confirmation)
+    end
+
+    def find_admin
+        @admin = Admin.find(params[:id])
     end
 
 end
