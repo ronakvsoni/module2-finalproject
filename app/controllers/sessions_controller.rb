@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
 	before_action :authorized, except: [:new, :create]
-	before_action :current_user, except: [:new, :create]
+	before_action :current_admin, except: [:new, :create]
 	
 	def new
 	end
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-		session[:admin_id] = nil
+		session.delete :admin_id #= nil
 		flash[:message] = "Successfully logged out."
 		redirect_to home_path
 	end

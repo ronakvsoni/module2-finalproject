@@ -32,3 +32,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore PostgreSQL database info with Brandon's Info
+/config/database.yml.enc
