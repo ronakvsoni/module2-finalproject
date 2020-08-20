@@ -27,13 +27,11 @@
 <% end %>
 
 <%= form_with url: '/login' do %>
-	<%= label_tag :username %>
-	<%= text_field_tag :username %>
-
-	<%= label_tag :password %>
-	<%= password_field_tag :password %>
-
-	<%= submit_tag "Sign in", :class => "btn btn-success" %>
+                            <%= label_tag :username, 'Username' %>
+							<%= text_field_tag :username %><br><br>
+							<%= label_tag :password, 'Password' %>
+							<%= password_field_tag :password,  placeholder="Password"%><br><br>
+							<%= submit_tag "Sign in", :class => "btn btn-primary btn-block" %>
 <% end %>
 
 
@@ -49,3 +47,4 @@
 		</section>
 	</body>
 </html>
+
