@@ -7,24 +7,31 @@ class TeamsController < ApplicationController
     end
 
     def create
+        byebug
         @team = Team.new(team_params)
-        if @team.save
-            session[:team_id] = @team.id
-            redirect_to @team
+        if @team
+            # session[:team_id] = @team.id
+            redirect_to admin_path()
         else
             flash[:message] = @team.errors.full_messages
-            render 'new'
+            render :new
         end
     end
 
     def edit
     end
 
-    def show   
+    def update
+        @team.update(team_params)
+        flash[:message] = "Team Updated"
+        redirect_to @admin
     end
 
     def index
         @teams = Team.all
+    end
+
+    def show   
     end
 
     def destroy 

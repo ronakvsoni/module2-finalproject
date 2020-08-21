@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   resources :admins
  
   get '/signup', to: 'admins#new', as: 'signup'
-  get '/', to: 'sessions#new', as: 'home'
-  post '/login', to: 'sessions#create', as: 'login'
+  get '/', to: 'sessions#new'
+  get '/colab', to: 'sessions#new'
+  get '/home', to: 'sessions#new'
+  post '/login', to: 'sessions#create', as: 'dashboard'
   delete '/sessions', to: 'sessions#destroy'
 
-  #get '/colab', to: 'auth#index'
-  #root to: "auth#index"
+  root to: 'sessions#new'
 
 end
 

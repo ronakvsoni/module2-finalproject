@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cache_headers
 
     def current_admin
-      @current_admin ||= Admin.find_by(id: session[:admin_id])
+      @current_admin ||= Admin.find(session[:admin_id])
     end
     
     def logged_in?

@@ -18,12 +18,12 @@ class ProjectsController < ApplicationController
     end
 
     def edit
+
     end
 
     def show   
 
     end
-
 
     def index
         @projects = Project.all
@@ -43,6 +43,10 @@ private
 
     def find_project
         @project = Project.find(params[:id])
+    end
+
+    def get_all_project_tasks
+        @tasks = Task.find_all { |task| task.project_id == @project_id}
     end
 
 end

@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
 		if @admin && @admin.authenticate(params[:password])
 			# success
 			session[:admin_id] == @admin.id
-			redirect_to @admin
+			# redirect_to @admin
+			render template: 'admins/show'
 		else
 			# error
 			# user typed in wrong password, username doesn't exist
@@ -33,4 +34,3 @@ class SessionsController < ApplicationController
 		redirect_to home_path
 	end
 end
-
