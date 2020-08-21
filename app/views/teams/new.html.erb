@@ -1,19 +1,27 @@
-
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <strong style='color: red;'><%= e %></strong>
+    <br/><br/>
+  <% end %>
+<% end %>
 
 <div class="card mx-auto" style="width: 20rem;">
   <div class="card-body mx-auto">
     <p class="card-text">
-      <%= form_with model: @team, url: '/teams', method: 'POST' do |f| %>
+    <h2><%= "Create New Team" %></h2><br>
+      <%= form_with model: @team, local: true do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
         
         <%= f.label :team_member_id %>
-    
+        <%= f.label :admin_id %>
+        <%= f.number_field :admin_id %>
         <%= f.collection_select :team_member_id, TeamMember.all, :id, :name %><br><br>
 
 
-        <%= f.submit 'Create Team', :class => 'btn btn-primary' %>
+        <%= f.submit 'Create Team' %>
       <% end %>
+      	
     </p>
   </div>
 </div>

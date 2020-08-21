@@ -18,4 +18,5 @@ TeamMember.destroy_all
      
     )
 end
+
 puts "seed seeded!!!"

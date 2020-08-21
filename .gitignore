@@ -34,4 +34,4 @@
 /config/master.key
 
 # Ignore PostgreSQL database info with Brandon's Info
-/config/database.yml.enc
+/config/database.yml
