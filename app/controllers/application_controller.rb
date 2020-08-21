@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
     def current_admin
       @current_admin ||= Admin.find_by(id: session[:admin_id])
-     
     end
 
     #cookies[:key] = { :value => 'a yummy cookie', :expires => 1.year.from_now, :domain => 'domain.com' }

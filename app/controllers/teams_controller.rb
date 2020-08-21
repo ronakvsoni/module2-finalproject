@@ -12,21 +12,27 @@ class TeamsController < ApplicationController
         @team.admin_id = session[:admin_id]
         if @team.save
             session[:team_id] = @team.id
-            redirect_to @team
+            redirect_to admin_path(session[:admin_id])
         else
             flash[:message] = @team.errors.full_messages
-            render 'new'
+            render :new
         end
     end
 
     def edit
     end
 
-    def show   
+    def update
+        @team.update(team_params)
+        flash[:message] = "Team Updated"
+        redirect_to @admin
     end
 
     def index
         @teams = Team.all
+    end
+
+    def show   
     end
 
     def destroy 
@@ -45,5 +51,3 @@ private
     def find_team
         @team = Team.find(params[:id])
     end
-
-end

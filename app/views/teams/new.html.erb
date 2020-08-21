@@ -11,8 +11,6 @@
       <%= form_with( model: @team, method: :post, local: true ) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
-        <%= f.label :team_member_id %>
-        <%= f.collection_select :team_member_id, TeamMember.all, :id, :name %><br><br>
         <%= submit_tag 'Create Team', :class => 'btn btn-primary' %>
       <% end %>
     </p>
