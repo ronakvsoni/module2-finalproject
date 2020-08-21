@@ -57,11 +57,9 @@ ActiveRecord::Schema.define(version: 2020_08_15_220145) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.bigint "admin_id", null: false
-    t.bigint "team_member_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["admin_id"], name: "index_teams_on_admin_id"
-    t.index ["team_member_id"], name: "index_teams_on_team_member_id"
   end
 
   add_foreign_key "projects", "admins"
@@ -69,5 +67,4 @@ ActiveRecord::Schema.define(version: 2020_08_15_220145) do
   add_foreign_key "tasks", "projects"
   add_foreign_key "tasks", "team_members"
   add_foreign_key "teams", "admins"
-  add_foreign_key "teams", "team_members"
 end
