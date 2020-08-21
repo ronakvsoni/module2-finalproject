@@ -36,6 +36,7 @@ class AdminsController < ApplicationController
     end
 
     def destroy 
+        
         @admin.delete
         flash[:message] = "Successfully Deleted Your Account."
         redirect_to home_path

@@ -7,17 +7,15 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		# here we need to sign the user in
+
 		@admin = Admin.find_by(username: params[:username])
 
 		if @admin && @admin.authenticate(params[:password])
-			# success
+
 			session[:admin_id] == @admin.id
 			redirect_to @admin
 		else
-			# error
-			# user typed in wrong password, username doesn't exist
-			# todo: add specific error messages
+
 			if @admin == nil
 				flash[:alert] = "Username not found."
 			else
