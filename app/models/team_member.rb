@@ -1,3 +1,4 @@
 class TeamMember < ApplicationRecord
-    belongs_to :teams, optional :true
+belongs_to :teams, dependent: :destroy, optional :true
+    
 end

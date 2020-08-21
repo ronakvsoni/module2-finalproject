@@ -6,16 +6,7 @@ class TeamsController < ApplicationController
         @team = Team.new  
     end
 
-    # def create
-    #     @team = Team.new(team_params)
-    #     if @team.save
-    #         session[:team_id] = @team.id
-    #         redirect_to @team
-    #     else
-    #         flash[:message] = @team.errors.full_messages
-    #         render 'new'
-    #     end
-    # end
+
     def create
         @team = Team.new(team_params)
         @team.admin_id = session[:admin_id]
@@ -49,6 +40,7 @@ class TeamsController < ApplicationController
         flash[:message] = "Successfully Deleted Team"
         redirect_to @admin
     end
+
 
 private
 
