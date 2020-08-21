@@ -1,17 +1,11 @@
-
-
 <div class="card mx-auto" style="width: 20rem;">
   <div class="card-body mx-auto">
     <p class="card-text">
       <%= form_with model: @team, url: '/teams', method: 'POST' do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
-        
         <%= f.label :team_member_id %>
-    
         <%= f.collection_select :team_member_id, TeamMember.all, :id, :name %><br><br>
-
-
         <%= f.submit 'Create Team', :class => 'btn btn-primary' %>
       <% end %>
     </p>

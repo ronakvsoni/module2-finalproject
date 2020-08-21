@@ -19,9 +19,9 @@ class SessionsController < ApplicationController
 			# user typed in wrong password, username doesn't exist
 			# todo: add specific error messages
 			if @admin == nil
-				flash[:message] = "Admin could not be found."
+				flash[:alert] = "Username not found."
 			else
-				flash[:message] = "Wrong password."
+				flash[:alert] = "Incorrect password."
 			end
 			redirect_to home_path
 		end

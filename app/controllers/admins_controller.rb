@@ -2,7 +2,7 @@ class AdminsController < ApplicationController
     before_action :find_admin, only: [:show, :edit, :update, :destroy]
 
     def new
-        @admin=Admin.new  
+        @admin = Admin.new  
     end
 
     def create

@@ -22,25 +22,20 @@
 			<div class="card mx-auto" style="width: 18rem;">
 				<div class="card-body">
 					<p class="card-text">
-                    <%# <% if flash[:message] %>
-						<%# <p><%= flash[:message] %>
-					<%# <% end %>
+					<% if flash.now[:alert] %>
+						<div class="alert alert-danger" role="alert">
+								<%= flash[:alert] %>
+						</div>
+					<% end %>
 						<%= form_with url: '/login' do %>
-							<% if flash.now[:alert] %>
-								<div class="alert alert-danger" role="alert">
-									<%= flash[:alert] %>
-								</div>
-							<% end %>
-							<%= label_tag :username %>
-							<%= text_field_tag :username %>
-							<%= label_tag :password %>
-							<%= password_field_tag :password %>
-							<%= submit_tag "Sign in", :class => "btn btn-primary btn-block" %>
+							<%= text_field_tag(:username, "", placeholder: "Username", :class => "form-control") %><br>
+							<%= password_field_tag(:password, "", placeholder: "Password", :class => "form-control") %><br>
+							<%= submit_tag "Sign in", :class => "btn btn-primary btn-block" %><br>
 						<% end %>
 						<div class="h-divider">
 						</div><br>
 						<div class="text-center">
-							<%= button_to "Create New Account", new_admin_path, :class => "btn btn-success", :method => :get %>
+							<%= button_to "Create New Account", new_admin_path, :method => :get, :class => "btn btn-success" %>
 						</div>
 					</p>
 				</div>
