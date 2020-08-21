@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
 
     def create
         @team = Team.new(team_params)
+        byebug
         if @team.save
             session[:team_id] = @team.id
             redirect_to @team
@@ -15,6 +16,7 @@ class TeamsController < ApplicationController
             flash[:message] = @team.errors.full_messages
             render 'new'
         end
+        # redirect_to teams_path
     end
 
     def edit
@@ -36,7 +38,7 @@ class TeamsController < ApplicationController
 private
 
     def team_params
-        params.require(:team).permit(:name, :admin_id, :team_member_ids)
+        params.require(:team).permit(:name, :admin_id, :team_member_id)
     end
 
     def find_team

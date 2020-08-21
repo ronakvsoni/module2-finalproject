@@ -1,7 +1,13 @@
-<div class="card mx-auto" style="width: 20rem;">
+<<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <strong style='color: red;'><%= e %></strong>
+    <br/><br/>
+  <% end %>
+<% end %>
+  div class="card mx-auto" style="width: 20rem;">
   <div class="card-body mx-auto">
     <p class="card-text">
-      <%= form_with model: @team, url: '/teams', method: 'POST' do |f| %>
+      <%= form_with model: @team, url: '/teams', method: 'POST', local: true do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
         <%= f.label :team_member_id %>
