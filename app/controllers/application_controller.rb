@@ -3,8 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :set_cache_headers
 
     def current_admin
-      @current_admin ||= Admin.find(session[:admin_id])
+      @current_admin ||= Admin.find_by(id: session[:admin_id])
     end
+
+    #cookies[:key] = { :value => 'a yummy cookie', :expires => 1.year.from_now, :domain => 'domain.com' }
+
     
     def logged_in?
       !!current_admin

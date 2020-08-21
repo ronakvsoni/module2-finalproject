@@ -8,7 +8,7 @@
 
 <%= button_to "Edit Team", edit_admin_path(@team), method: :get %>
 
-<%= button_to "Delete Your Account", admin_path(@admin), method: :delete %>
+<%= button_to "Delete Your Account", admin_path(session[:admin_id]), method: :delete %>
 
 
 <%= button_to "Create Team", new_team_path, :class => "btn btn-outline-primary", :method => :get %>
