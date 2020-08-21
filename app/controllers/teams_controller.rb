@@ -38,7 +38,7 @@ class TeamsController < ApplicationController
     def destroy 
         @team.delete
         flash[:message] = "Successfully Deleted Team"
-        redirect_to @team
+        redirect_to @admin
     end
 
 
