@@ -29,6 +29,7 @@ class AdminsController < ApplicationController
 
 
     def show
+        # byebug
     end
 
     def index
@@ -49,7 +50,7 @@ private
     end
 
     def find_admin
-        @admin = Admin.find_by(id: :admin_id)
+        @admin = Admin.find(params[:id])
     end
 
 end
