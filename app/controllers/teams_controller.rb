@@ -8,7 +8,6 @@ class TeamsController < ApplicationController
 
     def create
         @team = Team.new(team_params)
-        byebug
         if @team.save
             session[:team_id] = @team.id
             redirect_to @team
