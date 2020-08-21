@@ -17,7 +17,6 @@ class TeamsController < ApplicationController
     #     end
     # end
     def create
-        byebug
         @team = Team.new(team_params)
         @team.admin_id = session[:admin_id]
         if @team.save
