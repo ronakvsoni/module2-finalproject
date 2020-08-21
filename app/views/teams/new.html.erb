@@ -4,13 +4,14 @@
     <br/><br/>
   <% end %>
 <% end %>
-  <div class="card mx-auto" style="width: 20rem;">
+<div class="card mx-auto" style="width: 20rem;">
   <div class="card-body mx-auto">
     <p class="card-text">
-      <%= form_with model: @team, url: '/teams', method: 'POST', local: true do |f| %>
+    <h2><%= "Create New Team" %></h2><br>
+      <%= form_with( model: @team, method: :post, local: true ) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
-        <%= f.submit 'Create Team', :class => 'btn btn-primary' %>
+        <%= submit_tag 'Create Team', :class => 'btn btn-primary' %>
       <% end %>
     </p>
   </div>

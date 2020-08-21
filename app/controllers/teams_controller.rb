@@ -6,14 +6,22 @@ class TeamsController < ApplicationController
         @team = Team.new  
     end
 
+    # def create
+    #     @team = Team.new(team_params)
+    #     if @team.save
+    #         session[:team_id] = @team.id
+    #         redirect_to @team
+    #     else
+    #         flash[:message] = @team.errors.full_messages
+    #         render 'new'
+    #     end
+    # end
     def create
         @team = Team.new(team_params)
         @team.admin_id = session[:admin_id]
-        byebug
         if @team.save
-            # session[:team_id] = @team.id
-            # redirect_to admin_path(session[:admin_id])
-            redirect_to @team
+            session[:team_id] = @team.id
+            redirect_to admin_path(session[:admin_id])
         else
             flash[:message] = @team.errors.full_messages
             render :new
@@ -51,5 +59,3 @@ private
     def find_team
         @team = Team.find(params[:id])
     end
-@team.admin_id
-end
