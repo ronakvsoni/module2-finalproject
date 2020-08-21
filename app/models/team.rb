@@ -1,4 +1,4 @@
 class Team < ApplicationRecord
-  belongs_to :admin, dependent: :destroy
-  belongs_to :team_member
+  belongs_to :admin
+  has_many :team_members
 end
