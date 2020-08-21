@@ -15,4 +15,5 @@ TeamMember.destroy_all
       position: Faker::Job.position
     )
 end
+
 puts "Seeds seeded."

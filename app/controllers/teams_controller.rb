@@ -8,14 +8,19 @@ class TeamsController < ApplicationController
 
     def create
         @team = Team.new(team_params)
+        @team.admin_id = session[:admin_id]
         if @team.save
-            session[:team_id] = @team.id
+            #session[:team_id] = @team
+            
+           # alert("come to create")
+           # byebug
             redirect_to @team
         else
             flash[:message] = @team.errors.full_messages
             render 'new'
         end
     end
+
 
     def edit
     end
@@ -36,7 +41,7 @@ class TeamsController < ApplicationController
 private
 
     def team_params
-        params.require(:team).permit(:name, :admin_id, :team_member_ids)
+        params.require(:team).permit(:name, :admin_id, :team_member_id)
     end
 
     def find_team
