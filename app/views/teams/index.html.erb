@@ -1,10 +1,7 @@
-<h1>hiiiiiiiii</h1>
+<h1>All Teams</h1>
 
-
-
-
-<% @teams.each do |team| %>
-  <h1 style='font-size:1.5rem;margin-top:50px'>Team Name:</h1>
-     <%= link_to team.name, team  %> 
-
-<% end %>
+<ul>
+  <% @team.each do |teaming| %>
+    <li><%= link_to teaming.name, teaming %></li>
+  <% end %>
+</ul>
