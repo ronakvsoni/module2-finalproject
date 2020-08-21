@@ -8,7 +8,7 @@
 <div class="card mx-auto" style="width: 20rem;">
   <div class="card-body mx-auto">
     <p class="card-text">
-      <%= form_with model: @admin, local: true do |f| %>
+      <%= form_with model: @admin, url: '/admins', method: 'POST' do |f| %>
         <%= f.label :username %>
         <%= f.text_field :username %><br><br>
         
