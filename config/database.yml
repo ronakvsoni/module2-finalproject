@@ -24,7 +24,7 @@ default: &default
 
 development:
   <<: *default
-  database: data
+  database: module_2_project_colab_development
   port: 5432
 
 
