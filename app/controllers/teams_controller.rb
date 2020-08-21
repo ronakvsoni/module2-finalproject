@@ -15,7 +15,6 @@ class TeamsController < ApplicationController
             flash[:message] = @team.errors.full_messages
             render 'new'
         end
-        # redirect_to teams_path
     end
 
     def edit
