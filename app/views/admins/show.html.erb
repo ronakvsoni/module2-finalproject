@@ -21,3 +21,9 @@
         </p>
     </div>
 </div>
+
+<h1>All Teams</h1>
+
+<% @admin.teams.each do |team| %>
+    <%= button_to "#{team.name}", team_path, method: :get %>
+<% end %>

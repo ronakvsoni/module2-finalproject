@@ -45,4 +45,8 @@ private
         @project = Project.find(params[:id])
     end
 
+    def get_all_project_tasks
+        @tasks = Task.find_all { |task| task.project_id == @project_id}
+    end
+
 end
