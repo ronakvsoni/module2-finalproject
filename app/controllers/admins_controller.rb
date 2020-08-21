@@ -49,7 +49,7 @@ private
     end
 
     def find_admin
-        @admin = Admin.find(params[:id])
+        @admin = Admin.find_by(id: :admin_id)
     end
 
 end
