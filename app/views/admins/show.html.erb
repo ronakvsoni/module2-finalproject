@@ -1,16 +1,22 @@
-
-<h1><%= @admin.username %></h1>
-
-<p><%= "Name: #{@admin.name}" %></p>
-
-<%= link_to "All admins", admins_path %>
-<%#= link_to "All admins", admins_path %>
-
-<%= button_to "Edit Your Account", edit_admin_path(@admin), method: :get %>
-
-<%= button_to "Delete Your Account", admin_path(@admin), method: :delete %>
-
-
-<%= button_to "Create Team", new_team_path, :class => "btn btn-outline-primary", :method => :get %>
-<%= button_to "Create Project", new_project_path, :class => "btn btn-outline-primary", :method => :get %>
-<%= button_to "Create Task", new_task_path, :class => "btn btn-outline-primary", :method => :get %>
+<div class="hero is-link">
+	<div class="container has-text-centered">
+		<h1 class = "title"><%= "Hello, #{@admin.name}!" %></h1>
+		<h2 class="subtitle"><%= "What would you like to do?" %></h2>
+	</div><br><br>
+</div>
+<div class="card mx-auto" style="width: 18rem;">
+				<div class="card-body">
+					<p class="card-text">
+						<div class="text-center">
+							<%= button_to "Create Team", new_team_path, :class => "btn btn-outline-primary btn-block", :method => :get %>
+                            <%= button_to "Create Project", new_project_path, :class => "btn btn-outline-primary btn-block", :method => :get %>
+                            <%= button_to "Create Task", new_task_path, :class => "btn btn-outline-primary btn-block", :method => :get %>
+                            <%= button_to "See All Admins", admins_path, :class => "btn btn-outline-primary btn-block", method: :get %><br>
+                            	<div class="h-divider">
+						        </div><br>
+                            <%= button_to "Edit Account", edit_admin_path(@admin), :class => "btn btn-success btn-block", method: :get %>
+                            <%= button_to "Delete Account", admin_path(@admin), :class => "btn btn-danger btn-block", method: :delete %>
+                            <%#= button_to "Show All Teams", index_team_path, :class => "btn btn-success", :method => :get %>
+						</div>
+					</p>
+				</div>

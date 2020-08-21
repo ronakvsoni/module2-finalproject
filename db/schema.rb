@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 2020_08_15_220145) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "name"
     t.bigint "admin_id", null: false
     t.bigint "team_member_id", null: false
     t.datetime "created_at", precision: 6, null: false
