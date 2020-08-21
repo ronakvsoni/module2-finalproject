@@ -63,7 +63,6 @@ development:
 test:
   <<: *default
   database: data
-  port: 5432
   host: localhost
   user: test
   password: Ronak@1984
