@@ -61,11 +61,7 @@ database: module_2_project_colab_development
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: data
-  port: 5432
-  host: localhost
-  user: test
-  password: Ronak@1984
+database: module_2_project_colab_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
