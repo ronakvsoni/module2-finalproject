@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
 		@admin = Admin.find_by(username: params[:username])
 
 		if @admin && @admin.authenticate(params[:password])
-
 			session[:admin_id] == @admin.id
 			# redirect_to @admin
 			render template: 'admins/show'
