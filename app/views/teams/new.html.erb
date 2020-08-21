@@ -4,7 +4,6 @@
     <br/><br/>
   <% end %>
 <% end %>
-
 <div class="card mx-auto" style="width: 20rem;">
   <div class="card-body mx-auto">
     <p class="card-text">
@@ -12,16 +11,12 @@
       <%= form_with model: @team, local: true do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %><br><br>
-        
         <%= f.label :team_member_id %>
         <%= f.label :admin_id %>
         <%= f.number_field :admin_id %>
         <%= f.collection_select :team_member_id, TeamMember.all, :id, :name %><br><br>
-
-
-        <%= f.submit 'Create Team' %>
-      <% end %>
-      	
+        <%= f.submit 'Create Team', :class => 'btn btn-primary' %>
+      <% end %>	
     </p>
   </div>
 </div>
