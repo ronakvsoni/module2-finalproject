@@ -63,7 +63,6 @@ development:
 test:
   <<: *default
   database: data
-  host: localhost
   user: test
   password: Ronak@1984
 
